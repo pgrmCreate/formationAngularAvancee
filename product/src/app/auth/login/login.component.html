@@ -1,0 +1,23 @@
+<div>
+    <form (ngSubmit)="tryLoggin()">
+        <div class="mb-3">
+            <label class="form-label">
+                <input type="text" class="form-control" [(ngModel)]="inputUsername" [ngModelOptions]="{standalone: true}">
+            </label>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">
+                <input type="password" class="form-control" [(ngModel)]="inputPassword" [ngModelOptions]="{standalone: true}">
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+    </form>
+
+    <p *ngIf="isErrorAuth" class="my-3 alert alert-warning">
+        Erreur d'authentification :
+
+        <app-forgot-password [username]="inputUsername"></app-forgot-password>
+    </p>
+</div>

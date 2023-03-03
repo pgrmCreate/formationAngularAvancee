@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Mon site marchand</h1>
+        </div>
+    </div>
+
+    <app-navbar></app-navbar>
+
+    <div class="row">
+        <div class="col12">
+            <div class="my-4" *ngFor="let product of getProduct()">
+                <a [routerLink]="['product', product.id]">Voir le produit {{ product.name }}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <router-outlet></router-outlet>
+    </div>
+</div>

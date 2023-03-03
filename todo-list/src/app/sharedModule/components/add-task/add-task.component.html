@@ -1,0 +1,10 @@
+<div class="row my-3">
+    <div class="col-6 offset-3">
+        <form class="d-flex" (ngSubmit)="handleAddTask()">
+            <input appTaskInput type="text" class="form-control" [(ngModel)]="newTaskName"
+                   [ngModelOptions]="{standalone: true}">
+
+            <button type="submit" class="btn btn-primary mx-2">Ajouter</button>
+        </form>
+    </div>
+</div>

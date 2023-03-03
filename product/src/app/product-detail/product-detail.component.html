@@ -1,0 +1,12 @@
+<div class="col-12">
+    <h2>Détail du produit</h2>
+
+    <div *ngIf="targetProduct">
+        <h3>{{ targetProduct.name }}</h3>
+    </div>
+
+    <a [routerLink]="[{ outlets: { aux : 'avis'} }]">Avis</a> <br>
+    <a [routerLink]="[{ outlets: { aux : 'technical'} }]">Fiche technique</a>
+
+    <router-outlet name="aux"></router-outlet>
+</div>

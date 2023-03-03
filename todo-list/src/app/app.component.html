@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row my-5">
+        <h1 appMyDirective class="text-center" i18n>My todolist</h1>
+    </div>
+
+    <app-add-task (eventNewTaskName)="addTask($event)"></app-add-task>
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let todo of todolist" [class]="{ 'task-done' : todo.isDone }">
+                        <td>{{ todo.id }}</td>
+                        <td>{{ todo.name | maxChar }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger" (click)="deleteTask(todo.id)">Supprimer</button>
+
+                            <button class="btn btn-sm btn-success mx-2" (click)="handleSetDone(todo)">Faite</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
